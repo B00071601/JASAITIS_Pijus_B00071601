@@ -1,0 +1,256 @@
+<?php
+/**
+ * The Admin Controller
+ *
+ * These are the basic functions to control and handle the administrator functions in the site
+ *
+ * @package      Itb
+ * @author       Pijus Jasaitis
+ */
+
+namespace Itb;
+
+/**
+ * Represents the Administrator Controller
+ *
+ * Class AdminController
+ * @package Itb
+ */
+class AdminController
+{
+    /**
+     * Check if user is logged in as an admin and allow them to add a user
+     */
+    public function addUser()
+    {
+        if (isset($_SESSION['isLoggedIn'])) {
+            if ($_SESSION["isLoggedIn"] == 1) {
+                require_once __DIR__ . '/../templates/admin/addUser.php';
+            }
+        }
+    }
+
+    /**
+     * Check if user is logged in as an admin and allow them to add a project
+     */
+    public function addProject()
+    {
+        if (isset($_SESSION['isLoggedIn'])) {
+            if ($_SESSION["isLoggedIn"] == 1) {
+                require_once __DIR__ . '/../templates/admin/addProject.php';
+            }
+        }
+    }
+
+    /**
+     * Process the form submitted by the administrator and bind the details to a new user
+     */
+    public function processAddUser()
+    {
+        $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+        $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+        $retypePassword = filter_input(INPUT_POST, 'retypePassword', FILTER_SANITIZE_STRING);
+        $role = filter_input(INPUT_POST, 'role', FILTER_SANITIZE_STRING);
+        $projectId = filter_input(INPUT_POST, 'projectId', FILTER_SANITIZE_STRING);
+        $supervisorId = filter_input(INPUT_POST, 'supervisorId', FILTER_SANITIZE_STRING);
+
+        if ($password == $retypePassword) {
+            if ($username != null) {
+                print "<p>Adding new";
+                if ($role == 2) {
+                    print " admin ";
+                } else {
+                    print " user ";
+                }
+                print "to the database.</p>";
+                User::addNewUserToDatabase($username, $password, $role, $projectId, $supervisorId);
+            } else {
+                print "<p>Username empty.</p>";
+                print "<p>Please try again.</p>";
+            }
+
+        } else {
+            print "<p>Passwords do not match.!</p>";
+            print "<p>Please try again.</p>";
+        }
+    }
+
+    /**
+     * Process the form submitted by the administrator and bind the details to a new project
+     */
+    public function processAddProject()
+    {
+        $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
+        $implementorId = filter_input(INPUT_POST, 'implementorId', FILTER_SANITIZE_STRING);
+        $deadline = filter_input(INPUT_POST, 'deadline', FILTER_SANITIZE_STRING);
+        $status = filter_input(INPUT_POST, 'status', FILTER_SANITIZE_STRING);
+
+            if($description!=null) {
+                if($implementorId!=null) {
+                    if($deadline!=null) {
+                        if($status!=null) {
+                            print "<p>Adding new project to the database.</p>";
+                            Action::addNewProjectToDatabase($description, $implementorId, $deadline, $status);
+                        }
+                        else {
+                            print "<p>Status empty.</p>";
+                            print "<p>Please enter a status between 1 and 2.</p>";
+                        }
+                    }
+                    else {
+                        print "<p>Deadline empty.</p>";
+                        print "<p>Please try again with a date in the format YYYY-MM-DD.</p>";
+                    }
+                }
+                else {
+                    $implementorId = 1;
+                    Action::addNewProjectToDatabase($description, $implementorId, $deadline, $status);
+                }
+            } else {
+                print "<p>Description empty.</p>";
+                print "<p>Please try again.</p>";
+            }
+
+
+    }
+
+    /**
+     * Check if user is logged in as an admin and allow them to remove a user
+     */
+    public function removeUser()
+    {
+        if(isset($_SESSION['isLoggedIn'])) {
+            if ($_SESSION["isLoggedIn"] == 1) {
+                require_once __DIR__ . '/../templates/admin/removeUser.php';
+            }
+        }
+    }
+
+    /**
+     * Process the form submitted by the administrator and remove a specified user
+     */
+    public function processRemoveUser()
+    {
+        $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+        $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_STRING);
+
+        if($username!=null && $id!=null || $_SESSION["username"]!=$username){
+            print "<p>Removing user from the database.</p>";
+            User::removeUserFromDatabase($username, $id);
+        } else {
+            print "<p>Fields can not be blank.</p>";
+            print "<p>Please try again.</p>";
+        }
+    }
+
+    /**
+     * Check if user is logged in as an admin and allow them to update a user
+     */
+    public function updateUser()
+    {
+        if(isset($_SESSION['isLoggedIn'])) {
+            if ($_SESSION["isLoggedIn"] == 1) {
+                require_once __DIR__ . '/../templates/admin/updateUser.php';
+            }
+        }
+    }
+
+    /**
+     * Check if user is logged in as an admin and allow them to update a project
+     */
+    public function updateProject()
+    {
+        if(isset($_SESSION['isLoggedIn'])) {
+            if ($_SESSION["isLoggedIn"] == 1) {
+                require_once __DIR__ . '/../templates/admin/updateProject.php';
+            }
+        }
+    }
+
+    /**
+     * Process the form submitted by the administrator and update a specified user
+     */
+    public function processUpdateUser()
+    {
+        $target = filter_input(INPUT_POST, 'target', FILTER_SANITIZE_STRING);
+        $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+        $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+        $retypePassword = filter_input(INPUT_POST, 'retypePassword', FILTER_SANITIZE_STRING);
+        $role = filter_input(INPUT_POST, 'role', FILTER_SANITIZE_STRING);
+        $projectId = filter_input(INPUT_POST, 'projectId', FILTER_SANITIZE_STRING);
+        $supervisorId = filter_input(INPUT_POST, 'supervisorId', FILTER_SANITIZE_STRING);
+
+        if($target!=null) {
+            if ($password == $retypePassword) {
+                if ($username != null) {
+                    if($role==0||$role==1||$role==2) {
+                        print "<p>Updating";
+                        if ($role == 2) {
+                            print " admin..";
+                        } else if ($role == 1){
+                            print " user..";
+                        }
+                        else {
+                            print " member..";
+                        }
+                        print ".</p>";
+                        User::updateUser($target, $username, $password, $role, $projectId, $supervisorId);
+                    } else {
+                        print "<p>Please enter role as '0'(Member), '1'(User) or '2'(Admin).</p>";
+                        print "<p>Please try again.</p>";
+                    }
+                } else {
+                    print "<p>Username can not be empty.</p>";
+                    print "<p>Please try again.</p>";
+                }
+
+            } else {
+                print "<p>Passwords do not match.</p>";
+                print "<p>Please try again.</p>";
+            }
+        } else{
+            print "<p>Target can not be empty.</p>";
+        }
+    }
+
+    /**
+     * Process the form submitted by the administrator and update a specified project
+     */
+    public function processUpdateProject()
+    {
+        $target = filter_input(INPUT_POST, 'target', FILTER_SANITIZE_STRING);
+        $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
+        $implementorId = filter_input(INPUT_POST, 'implementorId', FILTER_SANITIZE_STRING);
+        $deadline = filter_input(INPUT_POST, 'deadline');
+        $status = filter_input(INPUT_POST, 'status', FILTER_SANITIZE_STRING);
+
+        if($target!=null) {
+            if($description!=null) {
+                if($implementorId!=null) {
+                    if($deadline!=null) {
+                        if($status!=null) {
+                            print "<p>Updating project.";
+                            Action::updateProject($target, $description, $implementorId, $deadline, $status);
+                        }
+                        else{
+                            print "<p>Please enter a status between 1 and 2.</p>";
+                        }
+                    }
+                    else {
+                        print "<p>Please enter a deadline in the format YYYY-MM-DD.</p>";
+                    }
+                }
+                else{
+                    $implementorId = 1;
+                    Action::updateProject($target, $description, $implementorId, $deadline, $status);
+                }
+            }
+            else{
+                print "<p>Please enter a description.</p>";
+            }
+        }
+        else{
+            print "<p>Please enter a target ID.</p>";
+        }
+    }
+}

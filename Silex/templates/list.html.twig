@@ -1,0 +1,27 @@
+{#----------------#}
+{# templates/list.html.twig #}
+{#----------------#}
+
+{% extends '_base.html.twig' %}
+
+{% block pageTitle %}A list of Projects{% endblock %}
+
+{% block main %}
+
+<h1>Our Projects</h1>
+
+<table>
+    {% for project in projects %}
+        <tr>
+            <th>
+                <a href="/public/show/{{ project.id }}">{{ project.title }}</a>
+            </th>
+
+            <td>
+                <img src="/public/images/{{ project.image }}">
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

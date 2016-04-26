@@ -1,0 +1,9 @@
+The following is a list of sources for images and code which I have used in my project, all other files, including
+images, and code samples are either of my own creation and/or from examples in labs and lectures, including college
+and related resources &c.
+
+- Google maps embedded map -> https://maps.google.com/ [Google maps]
+                           -> https://support.google.com/maps/answer/3544418?hl=en [Aid in embedding the map.]
+- images/Research.png -> http://hyperacusisresearch.org/wp-content/uploads/2015/07/ResearchKey.jpg [Accessed: 11/04/16]
+- downloads/DecouplingSensorNetworks.pdf, downloads/InfluenceProbalisticMethodologies.pdf,
+  downloads/TypicalUnificationRedundancy.pdf -> https://pdos.csail.mit.edu/archive/scigen/ [Generated via SciGen]

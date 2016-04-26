@@ -1,0 +1,28 @@
+{#----------------#}
+{# templates/show.html.twig #}
+{#----------------#}
+
+{% extends '_base.html.twig' %}
+
+{% block pageTitle %}A project{% endblock %}
+
+{% block main %}
+
+<h1>One of our Projects</h1>
+
+<h2>Title = {{ project.title }}</h2>
+<p>
+    <strong>Author: </strong> {{ project.author }}
+</p>
+<p>
+    <strong>Deadline: </strong> {{ project.deadline }}
+</p>
+<p>
+    <strong>Status: </strong>
+    {% if project.status == "0" %}Completed/Passed{% endif %}
+    {% if project.status == "1" %}In Progress{% endif %}
+</p>
+
+<img src="/public/images/{{ project.image }}">
+
+{% endblock %}

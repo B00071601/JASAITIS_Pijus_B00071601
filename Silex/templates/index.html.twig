@@ -1,0 +1,28 @@
+{% extends '_base.html.twig' %}
+
+{# ------------------------------------------------- #}
+{% block pageTitle %}Home page{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block indexLinkStyle %}current_page{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block main %}
+
+<h1>
+Welcome - The GGG projects page! Now in Silex!
+</h1>
+
+<ul>
+    <li>
+        <a href="/public/list">View all projects</a>
+    </li>
+    <li>
+        <a href="/public/show/{{ random([1, 2, 3]) }}">Show me a random Project</a>
+    </li>
+    <li>
+        <a href="/public/">Restart Session</a>
+    </li>
+</ul>
+
+{% endblock %}

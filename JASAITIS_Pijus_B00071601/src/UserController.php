@@ -1,0 +1,37 @@
+<?php
+/**
+ * The User Controller
+ *
+ * These are the basic functions to control and handle User processes in the site
+ *
+ * @package      Itb
+ * @author       Pijus Jasaitis
+ */
+
+namespace Itb;
+
+/**
+ * Represents the User Controller
+ *
+ * Class UserController
+ * @package Itb
+ */
+class UserController
+{
+    /**
+     * Handles the /list action
+     */
+    public function listAction()
+    {
+        $users = User::getAll();
+
+        if(isset($_SESSION['isLoggedIn'])) {
+            if ($_SESSION["isLoggedIn"] == 1) {
+                require __DIR__ . '/../templates/users/list.php';
+            }
+        }
+        else {
+            require __DIR__ . '/../templates/users/list.php';
+        }
+    }
+}

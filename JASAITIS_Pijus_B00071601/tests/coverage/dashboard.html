@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for C:\laragon\www\assignment1\src</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/nv.d3.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.min.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+ </head>
+ <body>
+  <header>
+   <div class="container">
+    <div class="row">
+     <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li><a href="index.html">C:\laragon\www\assignment1\src</a></li>
+        <li class="active">(Dashboard)</li>
+
+      </ol>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="UserController.php.html#6">UserController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PublicationController.php.html#12">PublicationController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MainController.php.html#6">MainController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AdminController.php.html#6">AdminController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#7">User</a></td><td class="text-right">22%</td></tr>
+       <tr><td><a href="Action.php.html#8">Action</a></td><td class="text-right">30%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="MainController.php.html#6">MainController</a></td><td class="text-right">2070</td></tr>
+       <tr><td><a href="AdminController.php.html#6">AdminController</a></td><td class="text-right">1892</td></tr>
+       <tr><td><a href="User.php.html#7">User</a></td><td class="text-right">507</td></tr>
+       <tr><td><a href="Action.php.html#8">Action</a></td><td class="text-right">92</td></tr>
+       <tr><td><a href="UserController.php.html#6">UserController</a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="PublicationController.php.html#12">PublicationController</a></td><td class="text-right">12</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="MainController.php.html#180"><abbr title="MainController::showProfile">showProfile</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MainController.php.html#205"><abbr title="MainController::setNewImage">setNewImage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PublicationController.php.html#14"><abbr title="PublicationController::listAction">listAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MainController.php.html#155"><abbr title="MainController::processRegister">processRegister</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MainController.php.html#150"><abbr title="MainController::registerPage">registerPage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MainController.php.html#108"><abbr title="MainController::secureNav">secureNav</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MainController.php.html#130"><abbr title="MainController::homePage">homePage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MainController.php.html#144"><abbr title="MainController::aboutPage">aboutPage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#24"><abbr title="User::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#32"><abbr title="User::setId">setId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#234"><abbr title="User::removeUserFromDatabase">removeUserFromDatabase</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#255"><abbr title="User::updateUser">updateUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserController.php.html#8"><abbr title="UserController::listAction">listAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#207"><abbr title="User::addNewUserToDatabase">addNewUserToDatabase</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#189"><abbr title="User::getOneByUsername">getOneByUsername</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#153"><abbr title="User::canFindMatchingUsernameAndPassword">canFindMatchingUsernameAndPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#172"><abbr title="User::canFindMatchingUsernameAndRole">canFindMatchingUsernameAndRole</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Action.php.html#103"><abbr title="Action::getOneById">getOneById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MainController.php.html#85"><abbr title="MainController::nav">nav</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AdminController.php.html#26"><abbr title="AdminController::processAddUser">processAddUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AdminController.php.html#56"><abbr title="AdminController::processAddProject">processAddProject</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AdminController.php.html#92"><abbr title="AdminController::removeUser">removeUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AdminController.php.html#17"><abbr title="AdminController::addProject">addProject</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AdminController.php.html#8"><abbr title="AdminController::addUser">addUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Action.php.html#121"><abbr title="Action::addNewProjectToDatabase">addNewProjectToDatabase</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Action.php.html#132"><abbr title="Action::updateProject">updateProject</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MainController.php.html#79"><abbr title="MainController::killSession">killSession</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AdminController.php.html#101"><abbr title="AdminController::processRemoveUser">processRemoveUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MainController.php.html#8"><abbr title="MainController::indexAction">indexAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MainController.php.html#22"><abbr title="MainController::processLoginAction">processLoginAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MainController.php.html#57"><abbr title="MainController::listAction">listAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MainController.php.html#72"><abbr title="MainController::forgetSession">forgetSession</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AdminController.php.html#176"><abbr title="AdminController::processUpdateProject">processUpdateProject</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AdminController.php.html#133"><abbr title="AdminController::processUpdateUser">processUpdateUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AdminController.php.html#115"><abbr title="AdminController::updateUser">updateUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AdminController.php.html#124"><abbr title="AdminController::updateProject">updateProject</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#88"><abbr title="User::setProjectId">setProjectId</abbr></a></td><td class="text-right">80%</td></tr>
+       <tr><td><a href="User.php.html#109"><abbr title="User::setSupervisorId">setSupervisorId</abbr></a></td><td class="text-right">80%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="MainController.php.html#180"><abbr title="MainController::showProfile">showProfile</abbr></a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="AdminController.php.html#133"><abbr title="AdminController::processUpdateUser">processUpdateUser</abbr></a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="MainController.php.html#85"><abbr title="MainController::nav">nav</abbr></a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="MainController.php.html#108"><abbr title="MainController::secureNav">secureNav</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="AdminController.php.html#176"><abbr title="AdminController::processUpdateProject">processUpdateProject</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="AdminController.php.html#56"><abbr title="AdminController::processAddProject">processAddProject</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="AdminController.php.html#26"><abbr title="AdminController::processAddUser">processAddUser</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="User.php.html#207"><abbr title="User::addNewUserToDatabase">addNewUserToDatabase</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="AdminController.php.html#101"><abbr title="AdminController::processRemoveUser">processRemoveUser</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="UserController.php.html#8"><abbr title="UserController::listAction">listAction</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="AdminController.php.html#17"><abbr title="AdminController::addProject">addProject</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="MainController.php.html#155"><abbr title="MainController::processRegister">processRegister</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="PublicationController.php.html#14"><abbr title="PublicationController::listAction">listAction</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="MainController.php.html#57"><abbr title="MainController::listAction">listAction</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="MainController.php.html#130"><abbr title="MainController::homePage">homePage</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="AdminController.php.html#92"><abbr title="AdminController::removeUser">removeUser</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="AdminController.php.html#115"><abbr title="AdminController::updateUser">updateUser</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="AdminController.php.html#8"><abbr title="AdminController::addUser">addUser</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="AdminController.php.html#124"><abbr title="AdminController::updateProject">updateProject</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="MainController.php.html#22"><abbr title="MainController::processLoginAction">processLoginAction</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="MainController.php.html#8"><abbr title="MainController::indexAction">indexAction</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="User.php.html#189"><abbr title="User::getOneByUsername">getOneByUsername</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="MainController.php.html#205"><abbr title="MainController::setNewImage">setNewImage</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="User.php.html#234"><abbr title="User::removeUserFromDatabase">removeUserFromDatabase</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="User.php.html#172"><abbr title="User::canFindMatchingUsernameAndRole">canFindMatchingUsernameAndRole</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="User.php.html#153"><abbr title="User::canFindMatchingUsernameAndPassword">canFindMatchingUsernameAndPassword</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Action.php.html#103"><abbr title="Action::getOneById">getOneById</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Action.php.html#132"><abbr title="Action::updateProject">updateProject</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="User.php.html#255"><abbr title="User::updateUser">updateUser</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="User.php.html#88"><abbr title="User::setProjectId">setProjectId</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="User.php.html#109"><abbr title="User::setSupervisorId">setSupervisorId</abbr></a></td><td class="text-right">3</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 3.1.0</a> using <a href="http://php.net/" target="_top">PHP 5.6.7</a> and <a href="https://phpunit.de/">PHPUnit 5.1.4</a> at Mon Apr 18 4:47:35 PDT 2016.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="js/jquery.min.js" type="text/javascript"></script>
+  <script src="js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="js/holder.min.js" type="text/javascript"></script>
+  <script src="js/d3.min.js" type="text/javascript"></script>
+  <script src="js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([4,0,0,1,1,0,0,0,0,0,0,1], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([36,0,0,0,0,0,0,0,0,2,0,28], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[30,15,"<a href=\"Action.php.html#8\">Action<\/a>"],[0,43,"<a href=\"AdminController.php.html#6\">AdminController<\/a>"],[0,45,"<a href=\"MainController.php.html#6\">MainController<\/a>"],[100,8,"<a href=\"Publication.php.html#8\">Publication<\/a>"],[0,3,"<a href=\"PublicationController.php.html#12\">PublicationController<\/a>"],[22.549019607843,32,"<a href=\"User.php.html#7\">User<\/a>"],[0,3,"<a href=\"UserController.php.html#6\">UserController<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[100,1,"<a href=\"Action.php.html#19\">Action::getId<\/a>"],[100,1,"<a href=\"Action.php.html#27\">Action::setId<\/a>"],[100,1,"<a href=\"Action.php.html#35\">Action::getDescription<\/a>"],[100,1,"<a href=\"Action.php.html#43\">Action::setDescription<\/a>"],[100,1,"<a href=\"Action.php.html#51\">Action::getImplementorid<\/a>"],[100,1,"<a href=\"Action.php.html#59\">Action::setImplementorid<\/a>"],[100,1,"<a href=\"Action.php.html#67\">Action::getDeadline<\/a>"],[100,1,"<a href=\"Action.php.html#75\">Action::setDeadline<\/a>"],[100,1,"<a href=\"Action.php.html#83\">Action::getStatus<\/a>"],[100,1,"<a href=\"Action.php.html#91\">Action::setStatus<\/a>"],[0,2,"<a href=\"Action.php.html#103\">Action::getOneById<\/a>"],[0,1,"<a href=\"Action.php.html#121\">Action::addNewProjectToDatabase<\/a>"],[0,2,"<a href=\"Action.php.html#132\">Action::updateProject<\/a>"],[0,3,"<a href=\"AdminController.php.html#8\">AdminController::addUser<\/a>"],[0,3,"<a href=\"AdminController.php.html#17\">AdminController::addProject<\/a>"],[0,4,"<a href=\"AdminController.php.html#26\">AdminController::processAddUser<\/a>"],[0,5,"<a href=\"AdminController.php.html#56\">AdminController::processAddProject<\/a>"],[0,3,"<a href=\"AdminController.php.html#92\">AdminController::removeUser<\/a>"],[0,4,"<a href=\"AdminController.php.html#101\">AdminController::processRemoveUser<\/a>"],[0,3,"<a href=\"AdminController.php.html#115\">AdminController::updateUser<\/a>"],[0,3,"<a href=\"AdminController.php.html#124\">AdminController::updateProject<\/a>"],[0,9,"<a href=\"AdminController.php.html#133\">AdminController::processUpdateUser<\/a>"],[0,6,"<a href=\"AdminController.php.html#176\">AdminController::processUpdateProject<\/a>"],[0,3,"<a href=\"MainController.php.html#8\">MainController::indexAction<\/a>"],[0,3,"<a href=\"MainController.php.html#22\">MainController::processLoginAction<\/a>"],[0,3,"<a href=\"MainController.php.html#57\">MainController::listAction<\/a>"],[0,1,"<a href=\"MainController.php.html#72\">MainController::forgetSession<\/a>"],[0,1,"<a href=\"MainController.php.html#79\">MainController::killSession<\/a>"],[0,8,"<a href=\"MainController.php.html#85\">MainController::nav<\/a>"],[0,7,"<a href=\"MainController.php.html#108\">MainController::secureNav<\/a>"],[0,3,"<a href=\"MainController.php.html#130\">MainController::homePage<\/a>"],[0,1,"<a href=\"MainController.php.html#144\">MainController::aboutPage<\/a>"],[0,1,"<a href=\"MainController.php.html#150\">MainController::registerPage<\/a>"],[0,3,"<a href=\"MainController.php.html#155\">MainController::processRegister<\/a>"],[0,9,"<a href=\"MainController.php.html#180\">MainController::showProfile<\/a>"],[0,2,"<a href=\"MainController.php.html#205\">MainController::setNewImage<\/a>"],[100,1,"<a href=\"Publication.php.html#18\">Publication::getId<\/a>"],[100,1,"<a href=\"Publication.php.html#26\">Publication::setId<\/a>"],[100,1,"<a href=\"Publication.php.html#34\">Publication::getTitle<\/a>"],[100,1,"<a href=\"Publication.php.html#42\">Publication::setTitle<\/a>"],[100,1,"<a href=\"Publication.php.html#50\">Publication::getAuthor<\/a>"],[100,1,"<a href=\"Publication.php.html#58\">Publication::setAuthor<\/a>"],[100,1,"<a href=\"Publication.php.html#66\">Publication::getUrl<\/a>"],[100,1,"<a href=\"Publication.php.html#74\">Publication::setUrl<\/a>"],[0,3,"<a href=\"PublicationController.php.html#14\">PublicationController::listAction<\/a>"],[0,1,"<a href=\"User.php.html#24\">User::getId<\/a>"],[0,1,"<a href=\"User.php.html#32\">User::setId<\/a>"],[100,1,"<a href=\"User.php.html#40\">User::getUsername<\/a>"],[100,1,"<a href=\"User.php.html#48\">User::setUsername<\/a>"],[100,1,"<a href=\"User.php.html#56\">User::getPassword<\/a>"],[100,1,"<a href=\"User.php.html#64\">User::getRole<\/a>"],[100,1,"<a href=\"User.php.html#72\">User::setRole<\/a>"],[100,1,"<a href=\"User.php.html#80\">User::getProjectId<\/a>"],[80,3,"<a href=\"User.php.html#88\">User::setProjectId<\/a>"],[100,1,"<a href=\"User.php.html#101\">User::getSupervisorId<\/a>"],[80,3,"<a href=\"User.php.html#109\">User::setSupervisorId<\/a>"],[100,1,"<a href=\"User.php.html#122\">User::getImage<\/a>"],[100,1,"<a href=\"User.php.html#130\">User::setImage<\/a>"],[100,1,"<a href=\"User.php.html#139\">User::setPassword<\/a>"],[0,2,"<a href=\"User.php.html#153\">User::canFindMatchingUsernameAndPassword<\/a>"],[0,2,"<a href=\"User.php.html#172\">User::canFindMatchingUsernameAndRole<\/a>"],[0,2,"<a href=\"User.php.html#189\">User::getOneByUsername<\/a>"],[0,4,"<a href=\"User.php.html#207\">User::addNewUserToDatabase<\/a>"],[0,2,"<a href=\"User.php.html#234\">User::removeUserFromDatabase<\/a>"],[0,2,"<a href=\"User.php.html#255\">User::updateUser<\/a>"],[0,3,"<a href=\"UserController.php.html#8\">UserController::listAction<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

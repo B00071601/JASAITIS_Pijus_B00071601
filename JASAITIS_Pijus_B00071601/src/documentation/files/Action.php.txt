@@ -1,0 +1,229 @@
+<?php
+/**
+ * The Action/Project
+ *
+ * These are the basic functions to create and modify Actions/Projects within the database
+ *
+ * @package      Itb
+ * @author       Pijus Jasaitis
+ */
+
+namespace Itb;
+
+use Mattsmithdev\PdoCrud\DatabaseTable;
+use Mattsmithdev\PdoCrud\DatabaseManager;
+
+/**
+ * Represents the Action/Publications
+ *
+ * Class Action
+ * @package Itb
+ */
+class Action extends DatabaseTable
+{
+    /**
+     * The ID number of the project
+     *
+     * @var int
+     */
+    private $id;
+    /**
+     * The Description, in string form, of the project
+     *
+     * @var String
+     */
+    private $description;
+    /**
+     * The implementor ID number of the project (Defunct)
+     * 
+     * @var int
+     */
+    private $implementorId;
+    /**
+     * The deadline date of the project
+     *
+     * @var String
+     */
+    private $deadline;
+    /**
+     * Binary representation of the status of the project
+     *
+     * @var int
+     */
+    private $status;
+
+    /**
+     * Return the ID number of the project
+     *
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set the ID number of the project
+     *
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * Return the description of the project
+     *
+     * @return mixed
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set the description of the project
+     *
+     * @param mixed $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * Return the implementor ID number of the project
+     *
+     * @return mixed
+     */
+    public function getImplementorId()
+    {
+        return $this->implementorId;
+    }
+
+    /**
+     *  Set the implementor ID number of the project
+     *
+     * @param mixed $implementorId
+     */
+    public function setImplementorId($implementorId)
+    {
+        $this->implementorId = $implementorId;
+    }
+
+    /**
+     *  Return the deadline of the project
+     *
+     * @return mixed
+     */
+    public function getDeadline()
+    {
+        return $this->deadline;
+    }
+
+    /**
+     *  Set the deadline of the project
+     *
+     * @param mixed $deadline
+     */
+    public function setDeadline($deadline)
+    {
+        $this->deadline = $deadline;
+    }
+
+    /**
+     *  Return the status of the project
+     *
+     * @return mixed
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     *  Set the status of the project
+     *
+     * @param mixed $status
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
+
+    /**
+     * Get object by ID number
+     *
+     * @param $id
+     *
+     * @return mixed|null
+     */
+    public static function getOneById($id)
+    {
+        $db = new DatabaseManager();
+        $connection = $db->getDbh();
+
+        $sql = 'SELECT * FROM actions WHERE id=:id';
+        $statement = $connection->prepare($sql);
+        $statement->bindParam(':id', $id, \PDO::PARAM_STR);
+        $statement->setFetchMode(\PDO::FETCH_CLASS, __CLASS__);
+        $statement->execute();
+
+        if ($object = $statement->fetch()) {
+            return $object;
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Add a new project to the database with given parameters
+     *
+     * @param $description
+     * @param $implementorId
+     * @param $deadline
+     * @param $status
+     */
+    public static function addNewProjectToDatabase($description, $implementorId, $deadline, $status)
+    {
+            $action = new Action();
+            $action->setDescription("$description");
+            $action->setimplementorId("$implementorId");
+            $action->setDeadline("$deadline");
+            $action->setStatus("$status");
+            print '<p>New project added.</p>';
+            Action::insert($action);
+    }
+
+    /**
+     * Update a project in the database with given parameters
+     *
+     * @param $target
+     * @param $description
+     * @param $implementorId
+     * @param $deadline
+     * @param $status
+     */
+    public static function updateProject($target, $description, $implementorId, $deadline, $status)
+    {
+        $isOnDatabase = Action::getOneById($target);
+        if($isOnDatabase!=null) {
+            $db = new DatabaseManager();
+            $connection = $db->getDbh();
+            $sql = 'UPDATE actions SET description=:description, implementorId=:implementorId, deadline=:deadline, status=:status WHERE id=:target';
+            $statement = $connection->prepare($sql);
+            $statement->bindParam(':target', $target, \PDO::PARAM_STR);
+            $statement->bindParam(':description', $description, \PDO::PARAM_STR);
+            $statement->bindParam(':implementorId', $implementorId, \PDO::PARAM_STR);
+            $statement->bindParam(':deadline', $deadline, \PDO::PARAM_STR);
+            $statement->bindValue(':status', $status, \PDO::PARAM_STR);
+            $statement->setFetchMode(\PDO::FETCH_CLASS, __CLASS__);
+            $statement->execute();
+
+            print "<p>Project updated.</p>";
+        } else {
+            print "<p>No project with ID ".$target." exists.</p>";
+        }
+    }
+}

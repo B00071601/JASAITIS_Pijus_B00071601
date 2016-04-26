@@ -1,0 +1,20 @@
+TAP version 13
+ok 1 - ItbTest\ActionTest::testCanBeCreated
+ok 2 - ItbTest\ActionTest::testGetIdAfterConstruction
+ok 3 - ItbTest\ActionTest::testGetDescriptionAfterConstruction
+ok 4 - ItbTest\ActionTest::testGetImplementorIdAfterConstruction
+ok 5 - ItbTest\ActionTest::testGetDeadlineAfterConstruction
+ok 6 - ItbTest\ActionTest::testGetStatusAfterConstruction
+ok 7 - ItbTest\PublicationTest::testCanBeCreated
+ok 8 - ItbTest\PublicationTest::testGetIdAfterConstruction
+ok 9 - ItbTest\PublicationTest::testGetTitleAfterConstruction
+ok 10 - ItbTest\PublicationTest::testGetAuthorAfterConstruction
+ok 11 - ItbTest\PublicationTest::testGetURLAfterConstruction
+ok 12 - ItbTest\UserTest::testCanBeCreated
+ok 13 - ItbTest\UserTest::testGetUsernameAfterConstruction
+ok 14 - ItbTest\UserTest::testGetPasswordAfterConstruction
+ok 15 - ItbTest\UserTest::testGetRoleAfterConstruction
+ok 16 - ItbTest\UserTest::testGetProjectIdAfterConstruction
+ok 17 - ItbTest\UserTest::testGetSupervisorIdAfterConstruction
+ok 18 - ItbTest\UserTest::testGetImageAfterConstruction
+1..18
